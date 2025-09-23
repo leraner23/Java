@@ -1,0 +1,24 @@
+## Solve these Questions:
+ Write a program that takes a student’s marks in byte, short, and int format and calculates the average using a double variable.
+
+  Write a program that takes two float values as input (representing length and breadth) and calculates the area of a rectangle. Store the result in a double.
+
+  Declare a char array for vowels and check if a given character is a vowel or not.
+
+  Create a program that uses a boolean variable to check if a given number is prime.
+
+  Create a program to store the population of different countries using long. Print which country has the maximum population.
+
+  Write a program to swap two numbers without using a third variable, using only arithmetic operators.
+
+  Take an integer as input and check if it is divisible by both 5 and 7 using logical operators.
+
+  Implement a program that uses the ternary operator to determine the leap year.
+
+  Write a program to calculate the factorial of a number using a decrement operator in the loop.
+
+  Write a program to take a double temperature in Celsius and convert it into an int. Compare results with the exact double value.
+
+  Create a program where you input a char and typecast it into an int to print its ASCII value.
+
+  Create a program that adds two numbers of different datatypes (e.g., int + double) and shows both implicit and explicit casting results.
