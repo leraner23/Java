@@ -21,6 +21,10 @@ A Java program consists of:
     }
 }
 
+
+
+
+
 ## 2️⃣ Data Types: components that related to data
  - **Indicate memory size** – how much memory the value will occupy  
 - ⚙️ **Define operations** – what operations can be performed on it  
@@ -30,12 +34,14 @@ A Java program consists of:
 						   + Primitive
 					       |
 						   + Non_primitive
+  
 						   
 	### ➤ 1) Primitive Data Types
 - 🏗 **Built-in**: Provided by the Java language (pre-built)  
 - 💾 **Direct storage**: Store values directly in memory (raw values)  
 - 🔒 **Immutable**: Cannot be changed and cannot be `null`  
 - 📏 **Fixed size**: No methods attached and size is predefined  
+
 
 
 	### ➤ Eight Primitive Types
@@ -51,6 +57,7 @@ A Java program consists of:
 | char     | 16   | '\u0000' |
 | boolean  | JVM-dependent | false |
 
+
  
 
 ### ➤ 2) Non-Primitive Data Types
@@ -59,6 +66,7 @@ A Java program consists of:
 - 🔄 **Mutable & nullable**: Can change after creation and can be `null` (e.g., a `String` can be `null`)  
 - 🛠 **Methods available**: Come with various built-in methods  
 - 📐 **Flexible size**: Size varies depending on the object’s structure  
+
 
 		
 	### ➤ Common Non-Primitive Types
@@ -69,11 +77,16 @@ A Java program consists of:
 - `Enum`  
 - `Annotation`  
 - `Wrapper classes` (e.g., `Integer`, `Double`, `Boolean`)  
-- ...and many more
+- many more
+
+
 
  
-## 3️⃣ Operators: Special Keywords that performs the certain tasks on variables and values.
-		=> helps in data manipulation & control decisions
+						## 3️⃣ Operators
+Operators are special **symbols** that perform certain tasks on variables and values.  
+- ⚙️ **Purpose**: Help in data manipulation  
+- 🧭 **Usage**: Support control decisions
+
 
 				     Types of Operators:       
                                               |
