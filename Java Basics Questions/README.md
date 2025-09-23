@@ -27,7 +27,10 @@ A Java program consists of:
 	=> what kind of value it could hold 
 				    Types of Data Types:     
                            |
+						   + Primitive
 					       |
+						   + Non_primitive
+						   
 	 1) Primitive Data Types:
 		-> Built by the language (pre-built)
 		-> Store value directly to the memory (raw values)
