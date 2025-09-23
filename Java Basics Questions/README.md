@@ -48,7 +48,7 @@ A Java program consists of:
 		
 	--> Non-primitive types: string - array - class -Interface - Enum - Annotation - wrapper classes & many more.
  
-## Operators: Special Keywords that performs the certain tasks on variables and values.
+## 3️⃣ Operators: Special Keywords that performs the certain tasks on variables and values.
 		=> helps in data manipulation & control decisions
 
 				     Types of Operators:       
