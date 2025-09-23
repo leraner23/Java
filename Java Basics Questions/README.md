@@ -14,13 +14,13 @@ A Java program consists of:
 - **curly brackets `{ }`** – to define code blocks
 
 **Example**
-
+```java
   public class Program {
     public static void main(String[] args) {
         // codes
     }
 }
-
+```
 
 
 
@@ -82,67 +82,125 @@ A Java program consists of:
 
 
  
-						## 3️⃣ Operators
+## 3️⃣ Operators
 Operators are special **symbols** that perform certain tasks on variables and values.  
 - ⚙️ **Purpose**: Help in data manipulation  
 - 🧭 **Usage**: Support control decisions
 
 
-				     Types of Operators:       
-                                              |
-					      |
-	1) Arithmetic Operators: basically performs mathematic operations on numeric and char values 
-		( '+' = add , '-' = subtract, "/" = division , '*' = multiplications, '%' = modulations )
-		Example:
-			public class program{
-			public static void main(String[] args){
-			int a = 12, b = 5;
-			System.out.println("a + b = " + (a + b)); // 17
-			System.out.println("a / b = " + (a / b)); // 2
-			System.out.println("a % b = " + (a % b)); // 2
-			}
-			}
 
-	2) Logical Operators: basically expressions that performs the logical AND (&&), Logical OR (||) and Logical NOT (!) on values
-		Example:	
-			public class program{
-			public static void main(String[] args){
-			Boolean a = true, b = false;
-			System.out.println(a && b);  // false
-			System.out.println(a || b);  // true
+ Types of Operators
+   |
+   +-- Arithmetic
+   +-- Logical
+   +-- Assignment
+   +-- Bitwise
+   +-- Relational
+   +-- Ternary
+   
 
-			}
-			}
+### ➤ 1) Arithmetic Operators
+Perform mathematical operations on numeric and `char` values.
+
+- `+` : Addition  
+- `-` : Subtraction  
+- `*` : Multiplication  
+- `/` : Division  
+- `%` : Modulus (remainder)
+
+**Example**
+```java
+public class Program {
+    public static void main(String[] args) {
+        int a = 12, b = 5;
+        System.out.println("a + b = " + (a + b)); // 17
+        System.out.println("a / b = " + (a / b)); // 2
+        System.out.println("a % b = " + (a % b)); // 2
+    }
+}
+```
+
+### ➤ 2) Logical Operators
+Logical operators perform operations on boolean expressions: **AND (`&&`)**, **OR (`||`)**, and **NOT (`!`)**.
+
+**Example**
+```java
+public class Program {
+    public static void main(String[] args) {
+        boolean a = true, b = false;
+        System.out.println("a && b = " + (a && b)); // false
+        System.out.println("a || b = " + (a || b)); // true
+        System.out.println("!a = " + (!a));         // false
+    }
+}
+```
  
-	3) Assignment Operators: Basically assign or update the variable values
-		( '=' - simple assignment, ('+=' , '-=', '%=', '*=', '/=' - compound assignments))
-		Example:
-			public class program{
-			public static void main(String[] args){
-			int i = 5;
-			num2 += 5; 
-			num1 = num1 +5;
-			System.out.println(num1 + num2 ); 
-			}
-			}
+### ➤ 3) Assignment Operators
+Assignment operators are used to **assign or update variable values**.
+
+- `=`  : Simple assignment  
+- `+=` : Add and assign  
+- `-=` : Subtract and assign  
+- `*=` : Multiply and assign  
+- `/=` : Divide and assign  
+- `%=` : Modulus and assign  
+
+**Example**
+```java
+public class Program {
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 10;
+
+        num2 += 5;        // num2 = num2 + 5 → 15
+        num1 = num1 + 5;  // num1 = 10
+
+        System.out.println("num1 + num2 = " + (num1 + num2)); // 25
+    }
+}
+```
 
 
-	4) Bitwise Operators: Basically manipulates the bits level
-		(('&' = AND , '|' = OR, '>>' = Right Shift, '>>>' = right shift with zero fill, '<<' = left shift , '^' = XOR , '~' = 			COMPLIMENT))
- 			
-		Example:	
-			public class program{
-			public static void main(String[] args){
-			int value = 0b0101;           // 5 in binary
-			System.out.println(value << 1);     // 10 (1010)
-			System.out.println(value & 0b0011); // 1 (0001)
-			}
-			}
+### ➤ 4) Bitwise Operators
+Bitwise operators **manipulate data at the bit level**.
+
+| Operator | Description |
+|----------|-------------|
+| `&`      | AND         |
+| `|`      | OR          |
+| `^`      | XOR         |
+| `~`      | Complement  |
+| `<<`     | Left shift  |
+| `>>`     | Right shift |
+| `>>>`    | Unsigned right shift (zero fill) |
+
+**Example**
+```java
+public class Program {
+    public static void main(String[] args) {
+        int value = 0b0101;           // 5 in binary
+
+        System.out.println("value << 1 = " + (value << 1));     // 10 (1010)
+        System.out.println("value & 0b0011 = " + (value & 0b0011)); // 1 (0001)
+    }
+}
+```
  
-	5) Relational Operators: Basically compares values and return Boolean
-		('==' - equal to , '>' = greater then, '!=' = not equal to, '<' = less than, '>=' - greater than or equal to, '<=' - less  		than or equal to )
+### ➤ 5) Relational Operators
+Relational operators **compare values** and return a boolean result (`true` or `false`).
 
-		Example:	
+| Operator | Meaning                         |
+|----------|---------------------------------|
+| `==`     | Equal to                        |
+| `!=`     | Not equal to                    |
+| `>`      | Greater than                    |
+| `<`      | Less than                       |
+| `>=`     | Greater than or equal to        |
+| `<=`     | Less than or equal to           |
+
+
+***Example:***	
+```java
 			public class program{
 			public static void main(String[] args){
 			int a = 7, b = 11;
@@ -151,11 +209,18 @@ Operators are special **symbols** that perform certain tasks on variables and va
 
 			}
 			}
-		
+```
 
-	6) Ternary (Conditional Operator):  Uses ' ?: ', similar to if-else conditional statements
-		Syntax: condition ? value if true : value if false
-		Example:	
+	### ➤ 6) Ternary (Conditional) Operator
+The **ternary operator** is a compact alternative to `if-else` statements.  
+It uses the syntax:  
+
+```text
+condition ? valueIfTrue : valueIfFalse
+```
+		
+***Example:***	
+```java
 			public class program{
 			public static void main(String[] args){
 			int i = 5;
