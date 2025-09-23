@@ -21,14 +21,14 @@ A Java program consists of:
     }
 }
 
-## Data Types: components that related to data
+## 2️⃣ Data Types: components that related to data
 	=> mainly tells how much the memory will it take 
 	=> what operations could be performed through it 
-	=> what kind of value it could hold  
-				     Types of Data Types:       
-                                              |
-					      |
-	1) Primitive Data Types:
+	=> what kind of value it could hold 
+				    Types of Data Types:     
+                           |
+					       |
+	 1) Primitive Data Types:
 		-> Built by the language (pre-built)
 		-> Store value directly to the memory (raw values)
 		-> Immutable & cannot be null
