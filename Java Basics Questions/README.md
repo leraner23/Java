@@ -22,9 +22,9 @@ A Java program consists of:
 }
 
 ## 2️⃣ Data Types: components that related to data
-	=> mainly tells how much the memory will it take 
-	=> what operations could be performed through it 
-	=> what kind of value it could hold 
+	- 🧮 **Indicate memory size** – how much memory the value will occupy  
+- ⚙️ **Define operations** – what operations can be performed on it  
+- 🏷️ **Specify value type** – what kind of value it can hold  
 				    Types of Data Types:     
                            |
 						   + Primitive
