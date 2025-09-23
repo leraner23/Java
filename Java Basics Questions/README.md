@@ -22,7 +22,7 @@ A Java program consists of:
 }
 
 ## 2️⃣ Data Types: components that related to data
-	- 🧮 **Indicate memory size** – how much memory the value will occupy  
+ - **Indicate memory size** – how much memory the value will occupy  
 - ⚙️ **Define operations** – what operations can be performed on it  
 - 🏷️ **Specify value type** – what kind of value it can hold  
 				    Types of Data Types:     
@@ -31,25 +31,46 @@ A Java program consists of:
 					       |
 						   + Non_primitive
 						   
-	 1) Primitive Data Types:
-		-> Built by the language (pre-built)
-		-> Store value directly to the memory (raw values)
-		-> Immutable & cannot be null
-		-> No methods attached and have fixed size 
+	### ➤ 1) Primitive Data Types
+- 🏗 **Built-in**: Provided by the Java language (pre-built)  
+- 💾 **Direct storage**: Store values directly in memory (raw values)  
+- 🔒 **Immutable**: Cannot be changed and cannot be `null`  
+- 📏 **Fixed size**: No methods attached and size is predefined  
 
-	--> Eight primitive Types: byte - short - int - long - float - double - char - Boolean  
-			     bits:   8 	-  16   - 32  -  64  -  32   -   64   -  16   - based on JVM
-		   Default values:   0  -  0    - 0   -  0L  -  0.0f -  0.0d  - \u000 - false
+
+	### ➤ Eight Primitive Types
+
+| Type     | Bits | Default Value |
+|----------|------|--------------|
+| byte     | 8    | 0 |
+| short    | 16   | 0 |
+| int      | 32   | 0 |
+| long     | 64   | 0L |
+| float    | 32   | 0.0f |
+| double   | 64   | 0.0d |
+| char     | 16   | '\u0000' |
+| boolean  | JVM-dependent | false |
+
  
 
-	2) Non - primitive Data Type: 
-		-> Stores the memory address of objects and arrays (reference) 
-		-> Both User defined & pre-built
-		-> Mutable & can be null (Example: String can be null)
-		-> Different methods available 
-		-> Size changes according to the object structure
+### ➤ 2) Non-Primitive Data Types
+- 🗂 **Reference storage**: Store the memory address of objects and arrays (reference)  
+- 👤 **User-defined or pre-built**: Can be created by the programmer or provided by Java  
+- 🔄 **Mutable & nullable**: Can change after creation and can be `null` (e.g., a `String` can be `null`)  
+- 🛠 **Methods available**: Come with various built-in methods  
+- 📐 **Flexible size**: Size varies depending on the object’s structure  
+
 		
-	--> Non-primitive types: string - array - class -Interface - Enum - Annotation - wrapper classes & many more.
+	### ➤ Common Non-Primitive Types
+- `String`  
+- `Array`  
+- `Class`  
+- `Interface`  
+- `Enum`  
+- `Annotation`  
+- `Wrapper classes` (e.g., `Integer`, `Double`, `Boolean`)  
+- ...and many more
+
  
 ## 3️⃣ Operators: Special Keywords that performs the certain tasks on variables and values.
 		=> helps in data manipulation & control decisions
