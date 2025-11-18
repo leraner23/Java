@@ -75,7 +75,8 @@ Make sure to include the following **Maven dependencies** in your `pom.xml`:
 
 ### 2. Application Properties
 jwt.secret=jsh72H3lz8xAAmk29jpq9Dsb3vH2lT8Bv8isRzFJHx0q4Wdsjksm==  # Replace with your own secret
-jwt.expiration=3600000  # Token expiration in milliseconds (1 hour)
+
+jwt.expiration=3600000                                             # Token expiration in milliseconds (1 hour)
 
 ### 3. Outputs:
 <img width="1302" height="681" alt="Screenshot 2025-11-18 231948" src="https://github.com/user-attachments/assets/32fefba3-a854-4218-b440-5aa63465dbce" />
