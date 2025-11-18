@@ -31,6 +31,7 @@ The payload contains basic user details or claims.
 ##### 3. Signature
 Signature ==> header + payload + secretKey (prevents from tampering the token)
 
+## Example
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
@@ -82,6 +83,7 @@ jwt.expiration=3600000                                             # Token expir
 <img width="1302" height="681" alt="Screenshot 2025-11-18 231948" src="https://github.com/user-attachments/assets/32fefba3-a854-4218-b440-5aa63465dbce" />
 <img width="1203" height="811" alt="Screenshot 2025-11-18 232002" src="https://github.com/user-attachments/assets/a2a406ed-2ed1-4b88-ac39-759ec91a94a2" />
 
+### 4. Link 
+https://www.jwt.io/
 
     
-		</dependency>
