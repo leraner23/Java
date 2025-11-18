@@ -1,0 +1,129 @@
+# Java Basics (Syntax, Data Types, Operators)
+
+This document explains the core concepts of **Java Basics** with examples.
+
+---
+
+## 1️⃣ Syntax  
+Proper way of writing Java code (the structure/rules a Java program follows).
+
+A Java program consists of:
+- **class keyword** – to declare the class
+- **main method** – program entry point
+- **semicolon `;`** – to end a statement
+- **curly brackets `{ }`** – to define code blocks
+
+**Example**
+```java
+public class Program {
+    public static void main(String[] args) {
+        // codes
+    }
+}
+
+## Data Types: components that related to data
+	=> mainly tells how much the memory will it take 
+	=> what operations could be performed through it 
+	=> what kind of value it could hold  
+				     Types of Data Types:       
+                                              |
+					      |
+	1) Primitive Data Types:
+		-> Built by the language (pre-built)
+		-> Store value directly to the memory (raw values)
+		-> Immutable & cannot be null
+		-> No methods attached and have fixed size 
+
+	--> Eight primitive Types: byte - short - int - long - float - double - char - Boolean  
+			     bits:   8 	-  16   - 32  -  64  -  32   -   64   -  16   - based on JVM
+		   Default values:   0  -  0    - 0   -  0L  -  0.0f -  0.0d  - \u000 - false
+ 
+
+	2) Non - primitive Data Type: 
+		-> Stores the memory address of objects and arrays (reference) 
+		-> Both User defined & pre-built
+		-> Mutable & can be null (Example: String can be null)
+		-> Different methods available 
+		-> Size changes according to the object structure
+		
+	--> Non-primitive types: string - array - class -Interface - Enum - Annotation - wrapper classes & many more.
+ 
+## Operators: Special Keywords that performs the certain tasks on variables and values.
+		=> helps in data manipulation & control decisions
+
+				     Types of Operators:       
+                                              |
+					      |
+	1) Arithmetic Operators: basically performs mathematic operations on numeric and char values 
+		( '+' = add , '-' = subtract, "/" = division , '*' = multiplications, '%' = modulations )
+		Example:
+			public class program{
+			public static void main(String[] args){
+			int a = 12, b = 5;
+			System.out.println("a + b = " + (a + b)); // 17
+			System.out.println("a / b = " + (a / b)); // 2
+			System.out.println("a % b = " + (a % b)); // 2
+			}
+			}
+
+	2) Logical Operators: basically expressions that performs the logical AND (&&), Logical OR (||) and Logical NOT (!) on values
+		Example:	
+			public class program{
+			public static void main(String[] args){
+			Boolean a = true, b = false;
+			System.out.println(a && b);  // false
+			System.out.println(a || b);  // true
+
+			}
+			}
+ 
+	3) Assignment Operators: Basically assign or update the variable values
+		( '=' - simple assignment, ('+=' , '-=', '%=', '*=', '/=' - compound assignments))
+		Example:
+			public class program{
+			public static void main(String[] args){
+			int i = 5;
+			num2 += 5; 
+			num1 = num1 +5;
+			System.out.println(num1 + num2 ); 
+			}
+			}
+
+
+	4) Bitwise Operators: Basically manipulates the bits level
+		(('&' = AND , '|' = OR, '>>' = Right Shift, '>>>' = right shift with zero fill, '<<' = left shift , '^' = XOR , '~' = 			COMPLIMENT))
+ 			
+		Example:	
+			public class program{
+			public static void main(String[] args){
+			int value = 0b0101;           // 5 in binary
+			System.out.println(value << 1);     // 10 (1010)
+			System.out.println(value & 0b0011); // 1 (0001)
+			}
+			}
+ 
+	5) Relational Operators: Basically compares values and return Boolean
+		('==' - equal to , '>' = greater then, '!=' = not equal to, '<' = less than, '>=' - greater than or equal to, '<=' - less  		than or equal to )
+
+		Example:	
+			public class program{
+			public static void main(String[] args){
+			int a = 7, b = 11;
+			System.out.println(a < b);   // true
+			System.out.println(a == b);  // false
+
+			}
+			}
+		
+
+	6) Ternary (Conditional Operator):  Uses ' ?: ', similar to if-else conditional statements
+		Syntax: condition ? value if true : value if false
+		Example:	
+			public class program{
+			public static void main(String[] args){
+			int i = 5;
+			String g = (10>i) ? "true" : "false";
+			System.out.println(g);
+			}
+			}
+
