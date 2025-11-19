@@ -1,0 +1,16 @@
+programming = talking with the computer 
+
+|
+ -> OOP(Object Oriented Programming) = style of programming / ways of programming that is centered around objects.
+ -> OBP(Object Based programming) = way  of programming like OOP but lacks some features of OOP.
+	|-> the features it lacks are Polymorphism, Abstraction , Inheritance.
+
+JAVA = OOP developed by Sun Microsystems now owned by Oracle.
+JDK (Java Development Kit) : The environment that provides the necessary tools and libraries for developing, compiling and running java applications.
+   Example: 
+	java version "21.0.2" 2024-01-16 LTS // 21.0.2 means java 21 update 2 used and LTS(Long term support)
+       	Java(TM) SE Runtime Environment (build 21.0.2+13-LTS-58) // JRE SE(Java Run time Standard edition)
+	Java Hotspot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
+
+The components of JDK are JVM, javac(java compiler) , JRE, .jar, API libraries, JDB(java debugger) ,Javadoc (Java Documentation generator), java (java launcher).
+1) JVM (Java Virtual Machine): 
