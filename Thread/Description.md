@@ -126,5 +126,129 @@ public class Open extends Thread {
     }
 }
 ```
+## KeyPoint
+- **Race Conditon** : condition occurs when multiple thread access the same data without any proper synchronization and timing that causes the lost update and   data corruptions.
 
+### Example 
+```java
+
+	class Counter {
+    int count = 0;
+    void increment() {
+        count++; // Not atomic: read, add, write
+    }
+}
+
+public class RaceDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+        Thread t1 = new Thread(() -> { for(int i=0;i<1000;i++) c.increment(); });
+        Thread t2 = new Thread(() -> { for(int i=0;i<1000;i++) c.increment(); });
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println("Final count: " + c.count);
+    }
+}
+```
+### Note:
+- In the above example code, 
+	count =  0 ,initially
+	count = 1, thread t1
+	count = 1, thread t2 
+but output should be count = 2 , this is ***race conditions*** 
+
+## Methods to Solve Race Conditions
+
+Race conditions occur when multiple threads access shared resources concurrently and the final outcome depends on the timing of their execution.  
+
+Two common ways to solve race conditions in Java:
+
+---
+
+### 1. Using the `synchronized` Keyword
+
+- Ensures that **only one thread executes a method at a time**.
+
+```java
+class Counter {
+    private int count = 0;
+
+    // synchronized ensures mutual exclusion on this instance
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+public class SyncDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println("Final count: " + counter.getCount());
+    }
+}
+```
+
+### 2. Using **Atomic Classes** (java.util.concurrent.atomic)
+-After using
+```java
+import java.util.concurrent.atomic.AtomicInteger;
+
+class AtomicCounter {
+    private AtomicInteger count = new AtomicInteger(0);
+
+    public void increment() {
+        count.getAndIncrement();  // atomic read-modify-write
+    }
+
+    public int getCount() {
+        return count.get();
+    }
+}
+
+public class AtomicDemo {
+    public static void main(String[] args) throws InterruptedException {
+        AtomicCounter counter = new AtomicCounter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println("Final count: " + counter.getCount());
+    }
+}
+```
 
