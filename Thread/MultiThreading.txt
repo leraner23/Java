@@ -1,0 +1,206 @@
+Multithreading:  concept in which the program can run multiple parts of the code simultaneously in a single process. 
+	particularly used for parallel execution of the code. 
+
+Key Concept: 
+	Thread: a single part of the program's code  that has it's own variables and stack but needs the same memory space and resources.
+	It is different than process because of thread shares the same memory space with other thread but process has independent memory space.
+
+	Key point : Concurrency means multiple tasks done by same CPU while Parallelism means multiple tasks done by different CPU.
+
+Creation of Thread in java: 
+	1) By extending the Thread class
+		Example:
+		public class Open extends Thread{
+			public void run(){
+			System.out.println("By extending thread");
+			}
+			
+			public static void main(String[] args){ 
+
+			 Thread thread = new Thread(); //creates thread
+			thread.start();  // starts thread
+			    }
+
+			}
+
+	2) By Implementing the runnable interface
+		Example:
+		public class Open implements Runnable{
+			public void run(){
+			System.out.println("By implmenting runnable ");
+			}
+			
+			public static void main(String[] args){ 
+			Open o = new open(); // create task
+			 Thread thread = new Thread(o); //wrap tasks in  thread
+			thread.start();  // starts thread
+			    }
+
+			}
+
+
+	3) By Using Lambda Expression
+		It is useful when the operations are limited.
+		Example:
+			public class program{ 
+ 			public static void main(String[] args){
+			Thread thread1 = new Thread(() -> { 
+			System.out.println("By using lambda expression ");
+			
+			}
+			thread1.start();
+
+
+                        }
+
+	key point: Generally runnable is prefered in java programs as in runnable interface provides the proper seperation of task and thread, while the extending methods is using direct method that eventually brings flexibility problems.
+
+Note: Multithreading is not deterministic; thread execution order may vary.
+
+	
+Thread Lifecycle in java: 
+	the stages that the thread passes through are:
+1) new : created the thread object but not started. (new keyword)
+2) runnable : ready to run state and waiting for CPU to allocate time. (start() method)
+3) running : when thread is actively in running state. (run() method)
+4) Blocked/ Waiting/ sleep : when the thread is inactive, when thread is waiting foer other resources, when thread is temporarily inactive. (wait() method , sleep() method)
+5) Terminated : when thread has completed the task.
+
+Example: 
+			public class Open extends Thread{
+			public void run(){
+			try{
+    			System.out.println("Sleep  ");
+			thread.sleep(2000); // for 2 seconds
+			System.out.println("woke up  ");
+				}
+			catch(InterruptedException e){ System.out.println("Interrupted"); }
+				}
+			
+			public static void main(String[] args){ 
+
+			 Thread thread = new Thread(); //creates thread
+			thread.start();  // starts thread
+			    }
+				try{
+    			System.out.println("for next task  ");
+			thread.join(); // block
+			
+				}
+			catch(InterruptedException e){ System.out.println("main  threat  			Interrupted"); }
+				
+			
+
+			}
+
+Key Note: 
+	Race Conditon : condition occurs when multiple thread access the same data without any proper synchronization and timing that causes the lost update and data corruptions.
+ Basic example: 
+	class Counter {
+    int count = 0;
+    void increment() {
+        count++; // Not atomic: read, add, write
+    }
+}
+
+public class RaceDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+        Thread t1 = new Thread(() -> { for(int i=0;i<1000;i++) c.increment(); });
+        Thread t2 = new Thread(() -> { for(int i=0;i<1000;i++) c.increment(); });
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println("Final count: " + c.count);
+    }
+}
+
+In the above example code, 
+	count =  0 ,initially
+	count = 1, thread t1
+	count = 1, thread t2 
+but output should be count = 2 , this is race conditions 
+
+
+Methods to solve race conditions:
+1) Using Synchronized keyword: ensures only one thread execute at a time
+After using:
+	
+class Counter {
+    private int count = 0;
+
+    // synchronized ensures mutual exclusion on this instance
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+public class SyncDemo {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println("Final count: " + counter.getCount());
+    }
+} 
+
+2) Using atomic classes from java.util.concurrent.atomic
+After using: 
+import java.util.concurrent.atomic.AtomicInteger;
+
+class AtomicCounter {
+    private AtomicInteger count = new AtomicInteger(0);
+
+    public void increment() {
+        count.getAndIncrement();  // atomic read-modify-write
+    }
+
+    public int getCount() {
+        return count.get();
+    }
+}
+
+public class AtomicDemo {
+    public static void main(String[] args) throws InterruptedException {
+        AtomicCounter counter = new AtomicCounter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increment();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+
+        System.out.println("Final count: " + counter.getCount());
+    }
+}
+
